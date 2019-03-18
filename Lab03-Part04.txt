@@ -1,0 +1,24 @@
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+double Analogin=0;
+double Vin=0;
+int i;
+double R=0;
+double R1=0;
+  for(i=0;i<=5;i++)
+  Analogin=0.7*Analogin+0.3*analogRead(A2);
+  
+  Vin=Analogin*2.5 /4095;
+  Serial.print(" Analogin= ");
+  Serial.print(Analogin);
+  Serial.print(" Vin= ");
+  Serial.print(Vin);
+  R=Vin*100000/2.5;
+  Serial.print(" \nR= ");
+  Serial.println(R);
+  
+  delay(500);
+}
